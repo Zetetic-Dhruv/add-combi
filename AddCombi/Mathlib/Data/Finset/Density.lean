@@ -3,14 +3,11 @@ module
 public import Mathlib.Data.Finset.Density
 public import Mathlib.Data.Fintype.Prod
 
-import AddCombi.Mathlib.Algebra.Order.Ring.NNRat
-
 public section
 
 namespace Finset
 variable {K α β : Type*} [DivisionRing K] [CharZero K] [Fintype α] [Fintype β]
   {s t : Finset α} {a : α}
-
 
 @[simp] lemma dens_product (s : Finset α) (t : Finset β) : (s ×ˢ t).dens = s.dens * t.dens := by
   simp [dens, mul_div_mul_comm]
